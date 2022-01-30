@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Identicon from 'identicon.js';
-import dvideo from '../dvideo.png'
+import dvideo from '../gadgetboy_img.jpeg';
 
 class Navbar extends Component {
 

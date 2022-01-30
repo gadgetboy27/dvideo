@@ -20,7 +20,7 @@ class Main extends Component {
             <h3><b><i>{this.props.currentTitle}</i></b></h3>
           </div>
           <div className="col-md-2 border border-danger overflow-auto text-center" style={{ maxHeight: '768px', minWidth: '175px' }}>
-          <h1 class="flex-auto text-sm font-bold text-roboto-900">
+          <h1 className="flex-auto text-sm font-bold text-roboto-900">
         Share Your Video
       </h1>
             <form onSubmit={(event) => {
@@ -40,7 +40,7 @@ class Main extends Component {
                     placeholder="Title..."
                     required />
                 </div>
-              <button type="submit" class="hover:bg-black-400 group flex items-center rounded-md btn-danger text-white text-md leading-6 font-medium py-2 px-3 rounded-lg">Upload!</button>
+              <button type="submit" className="hover:bg-black-400 group flex items-center rounded-md btn-danger text-white text-md leading-6 font-medium py-2 px-3 rounded-lg">Upload!</button>
               &nbsp;
               <br></br>
             </form>
