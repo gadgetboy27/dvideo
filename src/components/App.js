@@ -33,6 +33,7 @@ class App extends Component {
     const web3 = window.web3
     // Load account
     const accounts = await web3.eth.getAccounts()
+    console.log(accounts)
     this.setState({ account: accounts[0] })
     // Network ID
     const networkId = await web3.eth.net.getId()
@@ -88,7 +89,9 @@ class App extends Component {
       }
 
       this.setState({ loading: true })
-      this.state.dvideo.methods.uploadVideo(result[0].hash, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.dvideo.methods.uploadVideo(result[0].hash, title)
+      .send({ from: this.state.account })
+      .on('transactionHash', (hash) => {
         this.setState({ loading: false })
       })
     })
@@ -98,7 +101,7 @@ class App extends Component {
     this.setState({'currentHash': hash});
     this.setState({'currentTitle': title});
   }
-
+// passing state into webapp screen
   constructor(props) {
     super(props)
     this.state = {
