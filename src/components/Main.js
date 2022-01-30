@@ -20,25 +20,29 @@ class Main extends Component {
             <h3><b><i>{this.props.currentTitle}</i></b></h3>
           </div>
           <div className="col-md-2 border border-danger overflow-auto text-center" style={{ maxHeight: '768px', minWidth: '175px' }}>
-            <h5><b>Share Video</b></h5>
+          <h1 class="flex-auto text-sm font-bold text-roboto-900">
+        Share Your Video
+      </h1>
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
               this.props.uploadVideo(title)
             }} >
               &nbsp;
-              <input type='file' accept=".mp4, .mkv .ogg .wmv" onChange={this.props.captureFile} style={{ width: '250px' }} />
+              <input type='file' accept=".mp4, .mkv, .ogg, .wmv, .mov" onChange={this.props.captureFile} style={{ width: '250px' }} />
                 <div className="form-group mr-sm-2">
+                  <b></b>
                   <input
                     id="videoTitle"
                     type="text"
                     ref={(input) => { this.videoTitle = input }}
-                    className="form-control-sm"
+                    className="form-control-md"
                     placeholder="Title..."
                     required />
                 </div>
-              <button type="submit" className="btn btn-danger btn-block btn-sm">Upload!</button>
+              <button type="submit" class="hover:bg-black-400 group flex items-center rounded-md btn-danger text-white text-md leading-6 font-medium py-2 px-3 rounded-lg">Upload!</button>
               &nbsp;
+              <br></br>
             </form>
             { this.props.videos.map((video, key) => {
               return(
